@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hQ9-gB-a5R">
+                                <rect key="frame" x="16" y="50" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="URL" textContentType="url"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bTP-Lg-waB">
+                                <rect key="frame" x="32" y="96" width="311" height="30"/>
+                                <state key="normal" title="Start Downloading and Observe Progress"/>
+                                <connections>
+                                    <action selector="startDownloading:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vcy-G2-WfY"/>
+                                </connections>
+                            </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="sCY-ei-ZQj">
+                                <rect key="frame" x="16" y="174" width="343" height="2"/>
+                            </progressView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="hQ9-gB-a5R" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="De7-nn-CsC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hQ9-gB-a5R" secondAttribute="trailing" constant="16" id="ETF-WY-qXQ"/>
+                            <constraint firstItem="sCY-ei-ZQj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="KcD-kN-ObP"/>
+                            <constraint firstItem="bTP-Lg-waB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="Kha-0S-HVV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bTP-Lg-waB" secondAttribute="trailing" constant="32" id="LOn-cm-ged"/>
+                            <constraint firstItem="sCY-ei-ZQj" firstAttribute="top" secondItem="bTP-Lg-waB" secondAttribute="bottom" constant="48" id="LtR-1K-txy"/>
+                            <constraint firstItem="hQ9-gB-a5R" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="RHI-5e-k5v"/>
+                            <constraint firstItem="bTP-Lg-waB" firstAttribute="top" secondItem="hQ9-gB-a5R" secondAttribute="bottom" constant="16" id="hko-IV-lFY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="sCY-ei-ZQj" secondAttribute="trailing" id="sLW-uo-czg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="button" destination="bTP-Lg-waB" id="Ylo-Ov-c5w"/>
+                        <outlet property="progressView" destination="sCY-ei-ZQj" id="kFz-R5-Itl"/>
+                        <outlet property="textField" destination="hQ9-gB-a5R" id="xSR-g7-xiw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
