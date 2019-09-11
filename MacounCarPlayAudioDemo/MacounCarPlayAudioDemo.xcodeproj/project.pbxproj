@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		702FEACE2329236C00C8A5C9 /* PlayableContentHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 702FEACD2329236C00C8A5C9 /* PlayableContentHandler.m */; };
+		70E64CA12329278800B4A209 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70E64CA02329278800B4A209 /* MediaPlayer.framework */; };
 		70FF5FB4232903A10066505C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FF5FB3232903A10066505C /* AppDelegate.m */; };
 		70FF5FB7232903A10066505C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FF5FB6232903A10066505C /* ViewController.m */; };
 		70FF5FBA232903A10066505C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70FF5FB8232903A10066505C /* Main.storyboard */; };
@@ -17,6 +19,9 @@
 
 /* Begin PBXFileReference section */
 		702FEAC52329056D00C8A5C9 /* MacounCarPlayAudioDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MacounCarPlayAudioDemo.entitlements; sourceTree = "<group>"; };
+		702FEACC2329236C00C8A5C9 /* PlayableContentHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayableContentHandler.h; sourceTree = "<group>"; };
+		702FEACD2329236C00C8A5C9 /* PlayableContentHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayableContentHandler.m; sourceTree = "<group>"; };
+		70E64CA02329278800B4A209 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		70FF5FAF232903A10066505C /* MacounCarPlayAudioDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacounCarPlayAudioDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70FF5FB2232903A10066505C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		70FF5FB3232903A10066505C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -34,17 +39,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70E64CA12329278800B4A209 /* MediaPlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		70E64C9F2329278800B4A209 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				70E64CA02329278800B4A209 /* MediaPlayer.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		70FF5FA6232903A10066505C = {
 			isa = PBXGroup;
 			children = (
 				70FF5FB1232903A10066505C /* MacounCarPlayAudioDemo */,
 				70FF5FB0232903A10066505C /* Products */,
+				70E64C9F2329278800B4A209 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +79,8 @@
 				70FF5FB3232903A10066505C /* AppDelegate.m */,
 				70FF5FB5232903A10066505C /* ViewController.h */,
 				70FF5FB6232903A10066505C /* ViewController.m */,
+				702FEACC2329236C00C8A5C9 /* PlayableContentHandler.h */,
+				702FEACD2329236C00C8A5C9 /* PlayableContentHandler.m */,
 				70FF5FB8232903A10066505C /* Main.storyboard */,
 				70FF5FBB232903A20066505C /* Assets.xcassets */,
 				70FF5FBD232903A20066505C /* LaunchScreen.storyboard */,
@@ -153,6 +170,7 @@
 			files = (
 				70FF5FB7232903A10066505C /* ViewController.m in Sources */,
 				70FF5FC2232903A20066505C /* main.m in Sources */,
+				702FEACE2329236C00C8A5C9 /* PlayableContentHandler.m in Sources */,
 				70FF5FB4232903A10066505C /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
