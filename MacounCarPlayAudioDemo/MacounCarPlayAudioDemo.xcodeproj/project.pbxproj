@@ -16,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		702FEAC52329056D00C8A5C9 /* MacounCarPlayAudioDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MacounCarPlayAudioDemo.entitlements; sourceTree = "<group>"; };
 		70FF5FAF232903A10066505C /* MacounCarPlayAudioDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacounCarPlayAudioDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70FF5FB2232903A10066505C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		70FF5FB3232903A10066505C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -58,6 +59,7 @@
 		70FF5FB1232903A10066505C /* MacounCarPlayAudioDemo */ = {
 			isa = PBXGroup;
 			children = (
+				702FEAC52329056D00C8A5C9 /* MacounCarPlayAudioDemo.entitlements */,
 				70FF5FB2232903A10066505C /* AppDelegate.h */,
 				70FF5FB3232903A10066505C /* AppDelegate.m */,
 				70FF5FB5232903A10066505C /* ViewController.h */,
@@ -102,6 +104,14 @@
 				TargetAttributes = {
 					70FF5FAE232903A10066505C = {
 						CreatedOnToolsVersion = 10.3;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -285,6 +295,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MacounCarPlayAudioDemo/MacounCarPlayAudioDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NANNL9SK66;
 				INFOPLIST_FILE = MacounCarPlayAudioDemo/Info.plist;
@@ -302,6 +313,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MacounCarPlayAudioDemo/MacounCarPlayAudioDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NANNL9SK66;
 				INFOPLIST_FILE = MacounCarPlayAudioDemo/Info.plist;
