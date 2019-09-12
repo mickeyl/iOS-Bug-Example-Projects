@@ -8,7 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		702FEACE2329236C00C8A5C9 /* PlayableContentHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 702FEACD2329236C00C8A5C9 /* PlayableContentHandler.m */; };
+		70E3E295232A505B00CA9DCC /* TreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 70E3E294232A505B00CA9DCC /* TreeNode.m */; };
 		70E64CA12329278800B4A209 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70E64CA02329278800B4A209 /* MediaPlayer.framework */; };
+		70F73A25232A815C00285308 /* NSIndexPath+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F73A24232A815C00285308 /* NSIndexPath+Utilities.m */; };
 		70FF5FB4232903A10066505C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FF5FB3232903A10066505C /* AppDelegate.m */; };
 		70FF5FB7232903A10066505C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FF5FB6232903A10066505C /* ViewController.m */; };
 		70FF5FBA232903A10066505C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70FF5FB8232903A10066505C /* Main.storyboard */; };
@@ -21,7 +23,11 @@
 		702FEAC52329056D00C8A5C9 /* MacounCarPlayAudioDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MacounCarPlayAudioDemo.entitlements; sourceTree = "<group>"; };
 		702FEACC2329236C00C8A5C9 /* PlayableContentHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayableContentHandler.h; sourceTree = "<group>"; };
 		702FEACD2329236C00C8A5C9 /* PlayableContentHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayableContentHandler.m; sourceTree = "<group>"; };
+		70E3E293232A505B00CA9DCC /* TreeNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TreeNode.h; sourceTree = "<group>"; };
+		70E3E294232A505B00CA9DCC /* TreeNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TreeNode.m; sourceTree = "<group>"; };
 		70E64CA02329278800B4A209 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		70F73A23232A815C00285308 /* NSIndexPath+Utilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSIndexPath+Utilities.h"; sourceTree = "<group>"; };
+		70F73A24232A815C00285308 /* NSIndexPath+Utilities.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSIndexPath+Utilities.m"; sourceTree = "<group>"; };
 		70FF5FAF232903A10066505C /* MacounCarPlayAudioDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacounCarPlayAudioDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70FF5FB2232903A10066505C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		70FF5FB3232903A10066505C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -79,6 +85,10 @@
 				70FF5FB3232903A10066505C /* AppDelegate.m */,
 				70FF5FB5232903A10066505C /* ViewController.h */,
 				70FF5FB6232903A10066505C /* ViewController.m */,
+				70F73A23232A815C00285308 /* NSIndexPath+Utilities.h */,
+				70F73A24232A815C00285308 /* NSIndexPath+Utilities.m */,
+				70E3E293232A505B00CA9DCC /* TreeNode.h */,
+				70E3E294232A505B00CA9DCC /* TreeNode.m */,
 				702FEACC2329236C00C8A5C9 /* PlayableContentHandler.h */,
 				702FEACD2329236C00C8A5C9 /* PlayableContentHandler.m */,
 				70FF5FB8232903A10066505C /* Main.storyboard */,
@@ -168,6 +178,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70E3E295232A505B00CA9DCC /* TreeNode.m in Sources */,
+				70F73A25232A815C00285308 /* NSIndexPath+Utilities.m in Sources */,
 				70FF5FB7232903A10066505C /* ViewController.m in Sources */,
 				70FF5FC2232903A20066505C /* main.m in Sources */,
 				702FEACE2329236C00C8A5C9 /* PlayableContentHandler.m in Sources */,
