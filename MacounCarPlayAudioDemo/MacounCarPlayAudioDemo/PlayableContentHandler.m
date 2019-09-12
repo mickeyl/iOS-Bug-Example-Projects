@@ -69,10 +69,10 @@
 
     NSArray<TreeNode*>* children = @[ jmj, fabriqueNoir, tabernaMercurio ];
 
-
-    TreeNode* hot = [TreeNode nodeWithChildren:@[] title:@"🕺 What's Hot" subtitle:@"Da Hottest Funk in da Town 💃 " xplicit:NO artwork:nil];
-    TreeNode* new = [TreeNode nodeWithChildren:@[] title:@"🕺 New Releases" subtitle:@"New Stuff in da House 💃 " xplicit:NO artwork:nil];
-    TreeNode* fav = [TreeNode nodeWithChildren:children title:@"🕺 Favorites" subtitle:@"Your Personal Hitz 💃 " xplicit:NO artwork:nil];
+    NSURL* boxUrl = nil; //[NSURL URLWithString:@"https://image.flaticon.com/icons/png/128/65/65916.png"];
+    TreeNode* hot = [TreeNode nodeWithChildren:@[ fabriqueNoir ] title:@"🕺 What's Hot" subtitle:@"Da Hottest Funk in da Town 💃 " xplicit:NO artwork:boxUrl];
+    TreeNode* new = [TreeNode nodeWithChildren:@[ tabernaMercurio ] title:@"🕺 New Releases" subtitle:@"New Stuff in da House 💃 " xplicit:NO artwork:boxUrl];
+    TreeNode* fav = [TreeNode nodeWithChildren:children title:@"🕺 Favorites" subtitle:@"Your Personal Hitz 💃 " xplicit:NO artwork:boxUrl];
 
     NSURL* remoteURL = [NSURL URLWithString:@"http://www.vanille.de"];
     TreeNode* rnd = [TreeNode nodeWithURL:remoteURL title:@"🕺 Random" subtitle:@"I'm feeling lucky… 💃 " xplicit:NO artwork:nil];
