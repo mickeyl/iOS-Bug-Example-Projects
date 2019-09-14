@@ -8,12 +8,15 @@
 
 #import "PlayableContentHandler.h"
 
+#import <AVFoundation/AVFoundation.h>
+
 #import "TreeNode.h"
 #import "NSIndexPath+Utilities.h"
 
 @implementation PlayableContentHandler
 {
     TreeNode* _rootNode;
+    AVPlayer* _player;
 }
 
 +(instancetype)playableContentHandler
@@ -74,7 +77,7 @@
     TreeNode* new = [TreeNode nodeWithChildren:@[ tabernaMercurio ] title:@"🕺 New Releases" subtitle:@"New Stuff in da House 💃 " xplicit:NO artwork:boxUrl];
     TreeNode* fav = [TreeNode nodeWithChildren:children title:@"🕺 Favorites" subtitle:@"Your Personal Hitz 💃 " xplicit:NO artwork:boxUrl];
 
-    NSURL* remoteURL = [NSURL URLWithString:@"http://www.vanille.de"];
+    NSURL* remoteURL = [NSURL fileURLWithPath:@"/Users/mickey/privates/music/Fabrique Noir/albums/Space Travel/tracks/0_Sputnik/mastered/sputnik-mastered.aac"];
     TreeNode* rnd = [TreeNode nodeWithURL:remoteURL title:@"🕺 Random" subtitle:@"I'm feeling lucky… 💃 " xplicit:NO artwork:nil];
 
     _rootNode = [TreeNode nodeWithChildren:@[ hot, new, fav, rnd ] title:nil subtitle:nil xplicit:NO artwork:nil];
@@ -101,12 +104,12 @@
 
 -(void)onPlayCommand:(id)sender
 {
-
+    [_player play];
 }
 
 -(void)onPauseCommand:(id)sender
 {
-
+    [_player pause];
 }
 
 -(void)onTogglePlayPauseCommand:(id)sender
@@ -119,7 +122,8 @@
 
 -(MPContentItem*)contentItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return [_rootNode contentItemAtIndexPath:indexPath];
+    TreeNode* node = [_rootNode treeNodeAtIndexPath:indexPath];
+    return node.contentItem;
 }
 
 -(NSInteger)numberOfChildItemsAtIndexPath:(NSIndexPath *)indexPath
@@ -138,6 +142,30 @@
 -(void)playableContentManager:(MPPlayableContentManager *)contentManager initiatePlaybackOfContentItemAtIndexPath:(NSIndexPath *)indexPath completionHandler:(void(^)(NSError * __nullable))completionHandler
 {
     NSLog( @"initiatePlaybackOfContentItemAtIndexPath: %@", indexPath );
+
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        TreeNode* node = [_rootNode treeNodeAtIndexPath:indexPath];
+        if ( node.url )
+        {
+            _player = [AVPlayer playerWithURL:node.url];
+            [_player play];
+
+            MPPlayableContentManager.sharedContentManager.nowPlayingIdentifiers = @[ node.contentItem.identifier ];
+            MPNowPlayingInfoCenter.defaultCenter.nowPlayingInfo = node.nowPlayingInfo;
+            [UIApplication.sharedApplication beginReceivingRemoteControlEvents];
+#if TARGET_OS_SIMULATOR // strange, but true – you must actually call 'endReceiving' otherwise the simulator won't transition to the NowPlaying screen
+            [[UIApplication.sharedApplication endReceivingRemoteControlEvents];
+            [UIApplication.sharedApplication beginReceivingRemoteControlEvents];
+#endif
+            NSError* e;
+            [[AVAudioSession sharedInstance] setActive:YES error:&e];
+            if ( e )
+            {
+                NSLog( @"Can't activate audio session: %@", e );
+            }
+        }
+        completionHandler( nil );
+    });
 }
 
 @end

@@ -89,22 +89,33 @@
     }
 }
 
--(MPContentItem*)contentItemAtIndexPath:(NSIndexPath*)indexPath
+-(TreeNode*)treeNodeAtIndexPath:(NSIndexPath*)indexPath
 {
     switch ( indexPath.length )
     {
         case 0:
-            return self.contentItem;
+            return self;
 
         default:
         {
             NSInteger firstIndex = [indexPath indexAtPosition:0];
             TreeNode* child = [self.children objectAtIndex:firstIndex];
             NSIndexPath* nextLevelIndexPath = indexPath.LT_indexPathByRemovingFirstIndex;
-            return [child contentItemAtIndexPath:nextLevelIndexPath];
+            return [child treeNodeAtIndexPath:nextLevelIndexPath];
         }
     }
 }
+
+-(NSDictionary<NSString*,id>*)nowPlayingInfo
+{
+    return @{
+             MPMediaItemPropertyTitle: _title,
+             MPMediaItemPropertyGenre: @"Electronic/Downtempo",
+             MPMediaItemPropertyArtwork: self.contentItem.artwork,
+             MPMediaItemPropertyArtist: _subtitle
+             };
+}
+
 
 #pragma mark -
 #pragma mark Debugging

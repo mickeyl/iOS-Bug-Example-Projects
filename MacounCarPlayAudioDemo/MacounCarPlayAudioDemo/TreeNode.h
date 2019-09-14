@@ -26,7 +26,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(MPContentItem*)contentItem;
 -(NSInteger)numberOfChildItemsAtIndexPath:(NSIndexPath*)indexPath;
--(MPContentItem*)contentItemAtIndexPath:(NSIndexPath*)indexPath;
+-(TreeNode*)treeNodeAtIndexPath:(NSIndexPath*)indexPath;
+
+-(NSDictionary<NSString*,id>*)nowPlayingInfo;
 
 @end
 
