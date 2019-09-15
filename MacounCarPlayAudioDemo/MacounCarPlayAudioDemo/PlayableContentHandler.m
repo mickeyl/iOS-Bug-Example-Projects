@@ -154,7 +154,7 @@
             MPNowPlayingInfoCenter.defaultCenter.nowPlayingInfo = node.nowPlayingInfo;
             [UIApplication.sharedApplication beginReceivingRemoteControlEvents];
 #if TARGET_OS_SIMULATOR // strange, but true – you must actually call 'endReceiving' otherwise the simulator won't transition to the NowPlaying screen
-            [[UIApplication.sharedApplication endReceivingRemoteControlEvents];
+            [UIApplication.sharedApplication endReceivingRemoteControlEvents];
             [UIApplication.sharedApplication beginReceivingRemoteControlEvents];
 #endif
             NSError* e;
