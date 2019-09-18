@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		708F2B942330EB9900312C7A /* GridDemoTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 708F2B932330EB9900312C7A /* GridDemoTemplate.m */; };
+		708F2B97233107E100312C7A /* ListDemoTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 708F2B96233107E100312C7A /* ListDemoTemplate.m */; };
+		708F2B9A23312BC300312C7A /* SearchDemoTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 708F2B9923312BC300312C7A /* SearchDemoTemplate.m */; };
+		708F2B9D233130EA00312C7A /* MapDemoTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 708F2B9C233130EA00312C7A /* MapDemoTemplate.m */; };
 		70E23EC3232E6EDC00B96791 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 70E23EC2232E6EDC00B96791 /* AppDelegate.m */; };
 		70E23EC6232E6EDC00B96791 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70E23EC5232E6EDC00B96791 /* ViewController.m */; };
 		70E23EC9232E6EDC00B96791 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70E23EC7232E6EDC00B96791 /* Main.storyboard */; };
@@ -17,6 +21,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		708F2B922330EB9900312C7A /* GridDemoTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GridDemoTemplate.h; sourceTree = "<group>"; };
+		708F2B932330EB9900312C7A /* GridDemoTemplate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GridDemoTemplate.m; sourceTree = "<group>"; };
+		708F2B95233107E100312C7A /* ListDemoTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListDemoTemplate.h; sourceTree = "<group>"; };
+		708F2B96233107E100312C7A /* ListDemoTemplate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListDemoTemplate.m; sourceTree = "<group>"; };
+		708F2B9823312BC300312C7A /* SearchDemoTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchDemoTemplate.h; sourceTree = "<group>"; };
+		708F2B9923312BC300312C7A /* SearchDemoTemplate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchDemoTemplate.m; sourceTree = "<group>"; };
+		708F2B9B233130E900312C7A /* MapDemoTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapDemoTemplate.h; sourceTree = "<group>"; };
+		708F2B9C233130EA00312C7A /* MapDemoTemplate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapDemoTemplate.m; sourceTree = "<group>"; };
 		70E23EBE232E6EDC00B96791 /* MacounCarPlayNavigationDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacounCarPlayNavigationDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70E23EC1232E6EDC00B96791 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		70E23EC2232E6EDC00B96791 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -66,6 +78,14 @@
 				70E23EDA232E6F0100B96791 /* MacounCarPlayNavigationDemo.entitlements */,
 				70E23EC1232E6EDC00B96791 /* AppDelegate.h */,
 				70E23EC2232E6EDC00B96791 /* AppDelegate.m */,
+				708F2B922330EB9900312C7A /* GridDemoTemplate.h */,
+				708F2B932330EB9900312C7A /* GridDemoTemplate.m */,
+				708F2B95233107E100312C7A /* ListDemoTemplate.h */,
+				708F2B96233107E100312C7A /* ListDemoTemplate.m */,
+				708F2B9823312BC300312C7A /* SearchDemoTemplate.h */,
+				708F2B9923312BC300312C7A /* SearchDemoTemplate.m */,
+				708F2B9B233130E900312C7A /* MapDemoTemplate.h */,
+				708F2B9C233130EA00312C7A /* MapDemoTemplate.m */,
 				70E23EC4232E6EDC00B96791 /* ViewController.h */,
 				70E23EC5232E6EDC00B96791 /* ViewController.m */,
 				70E23EC7232E6EDC00B96791 /* Main.storyboard */,
@@ -163,8 +183,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				708F2B942330EB9900312C7A /* GridDemoTemplate.m in Sources */,
 				70E23EC6232E6EDC00B96791 /* ViewController.m in Sources */,
+				708F2B97233107E100312C7A /* ListDemoTemplate.m in Sources */,
 				70E23ED1232E6EDD00B96791 /* main.m in Sources */,
+				708F2B9A23312BC300312C7A /* SearchDemoTemplate.m in Sources */,
+				708F2B9D233130EA00312C7A /* MapDemoTemplate.m in Sources */,
 				70E23EC3232E6EDC00B96791 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -308,9 +332,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = MacounCarPlayNavigationDemo/MacounCarPlayNavigationDemo.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 8VGGSB37RB;
+				DEVELOPMENT_TEAM = NANNL9SK66;
 				INFOPLIST_FILE = MacounCarPlayNavigationDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -318,7 +342,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = de.vanille.MacounCarPlayNavigationDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "XC Ad Hoc: *";
+				PROVISIONING_PROFILE_SPECIFIER = MacounCarPlayNavigationDemo;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;

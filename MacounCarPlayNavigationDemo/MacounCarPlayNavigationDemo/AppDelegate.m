@@ -8,8 +8,15 @@
 
 #import "AppDelegate.h"
 
-@implementation AppDelegate
+#import "GridDemoTemplate.h"
 
+@implementation AppDelegate
+{
+    CPNavigationSession* _cpNavigationSession;
+}
+
+#pragma mark -
+#pragma mark <UIApplicationDelegate>
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
@@ -50,6 +57,13 @@
 -(void)application:(UIApplication *)application didConnectCarInterfaceController:(CPInterfaceController *)interfaceController toWindow:(CPWindow *)window
 {
     NSLog( @"CarPlay connected %@ to %@", interfaceController, window );
+    CPTemplate* grid = [GridDemoTemplate tp];
+    [interfaceController setRootTemplate:grid animated:NO];
+
+    window.rootViewController = self.viewController;
+
+    _cpInterfaceController = interfaceController;
+    _cpWindow = window;
 }
 
 -(void)application:(nonnull UIApplication *)application didDisconnectCarInterfaceController:(nonnull CPInterfaceController *)interfaceController fromWindow:(nonnull CPWindow *)window
@@ -67,6 +81,38 @@
 
 }
 
+#pragma mark -
+#pragma mark Helpers
+
+-(UIViewController*)viewController
+{
+    UIViewController* vc = [[UIViewController alloc] init];
+    MKMapView* map = [[MKMapView alloc] initWithFrame:CGRectZero];
+    [vc.view addSubview:map];
+    map.translatesAutoresizingMaskIntoConstraints = NO;
+    [vc.view.topAnchor constraintEqualToAnchor:map.topAnchor].active = YES;
+    [vc.view.leftAnchor constraintEqualToAnchor:map.leftAnchor].active = YES;
+    [vc.view.bottomAnchor constraintEqualToAnchor:map.bottomAnchor].active = YES;
+    [vc.view.rightAnchor constraintEqualToAnchor:map.rightAnchor].active = YES;
+    map.showsUserLocation = YES;
+    map.showsPointsOfInterest = YES;
+    map.showsTraffic = YES;
+    map.showsCompass = YES;
+    map.showsScale = YES;
+    CLLocationCoordinate2D macoun = CLLocationCoordinate2DMake(50.107231, 8.689365);
+    MKCoordinateRegion region = MKCoordinateRegionMake( macoun, MKCoordinateSpanMake( 0.005, 0.005 ) );
+    [map setRegion:region];
+
+    return vc;
+}
+
+#pragma mark -
+#pragma mark <API>
+
++(instancetype)delegate
+{
+    return (AppDelegate*)UIApplication.sharedApplication.delegate;
+}
 
 
 
