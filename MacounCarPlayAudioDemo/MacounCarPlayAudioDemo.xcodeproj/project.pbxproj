@@ -10,6 +10,7 @@
 		702FEACE2329236C00C8A5C9 /* PlayableContentHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 702FEACD2329236C00C8A5C9 /* PlayableContentHandler.m */; };
 		70E3E295232A505B00CA9DCC /* TreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 70E3E294232A505B00CA9DCC /* TreeNode.m */; };
 		70E64CA12329278800B4A209 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70E64CA02329278800B4A209 /* MediaPlayer.framework */; };
+		70EA59BF234798C1004D0228 /* dummyAudio.aac in Resources */ = {isa = PBXBuildFile; fileRef = 70EA59BE234798C1004D0228 /* dummyAudio.aac */; };
 		70F73A25232A815C00285308 /* NSIndexPath+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F73A24232A815C00285308 /* NSIndexPath+Utilities.m */; };
 		70FF5FB4232903A10066505C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FF5FB3232903A10066505C /* AppDelegate.m */; };
 		70FF5FB7232903A10066505C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FF5FB6232903A10066505C /* ViewController.m */; };
@@ -26,6 +27,7 @@
 		70E3E293232A505B00CA9DCC /* TreeNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TreeNode.h; sourceTree = "<group>"; };
 		70E3E294232A505B00CA9DCC /* TreeNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TreeNode.m; sourceTree = "<group>"; };
 		70E64CA02329278800B4A209 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		70EA59BE234798C1004D0228 /* dummyAudio.aac */ = {isa = PBXFileReference; lastKnownFileType = file; path = dummyAudio.aac; sourceTree = "<group>"; };
 		70F73A23232A815C00285308 /* NSIndexPath+Utilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSIndexPath+Utilities.h"; sourceTree = "<group>"; };
 		70F73A24232A815C00285308 /* NSIndexPath+Utilities.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSIndexPath+Utilities.m"; sourceTree = "<group>"; };
 		70FF5FAF232903A10066505C /* MacounCarPlayAudioDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacounCarPlayAudioDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,6 +98,7 @@
 				70FF5FBD232903A20066505C /* LaunchScreen.storyboard */,
 				70FF5FC0232903A20066505C /* Info.plist */,
 				70FF5FC1232903A20066505C /* main.m */,
+				70EA59BE234798C1004D0228 /* dummyAudio.aac */,
 			);
 			path = MacounCarPlayAudioDemo;
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 				70FF5FBF232903A20066505C /* LaunchScreen.storyboard in Resources */,
 				70FF5FBC232903A20066505C /* Assets.xcassets in Resources */,
 				70FF5FBA232903A10066505C /* Main.storyboard in Resources */,
+				70EA59BF234798C1004D0228 /* dummyAudio.aac in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,7 +330,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = MacounCarPlayAudioDemo/MacounCarPlayAudioDemo.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = NANNL9SK66;
 				INFOPLIST_FILE = MacounCarPlayAudioDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -335,6 +340,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = de.vanille.MacounCarPlayAudioDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = MacounCarPlayAudioDemo;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -344,7 +350,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = MacounCarPlayAudioDemo/MacounCarPlayAudioDemo.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = NANNL9SK66;
 				INFOPLIST_FILE = MacounCarPlayAudioDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -353,6 +360,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = de.vanille.MacounCarPlayAudioDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = MacounCarPlayAudioDemo;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

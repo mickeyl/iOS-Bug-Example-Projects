@@ -77,7 +77,7 @@
     TreeNode* new = [TreeNode nodeWithChildren:@[ tabernaMercurio ] title:@"🕺 New Releases" subtitle:@"New Stuff in da House 💃 " xplicit:NO artwork:boxUrl];
     TreeNode* fav = [TreeNode nodeWithChildren:children title:@"🕺 Favorites" subtitle:@"Your Personal Hitz 💃 " xplicit:NO artwork:boxUrl];
 
-    NSURL* remoteURL = [NSURL fileURLWithPath:@"/Users/mickey/privates/music/Fabrique Noir/albums/Space Travel/tracks/0_Sputnik/mastered/sputnik-mastered.aac"];
+    NSURL* remoteURL = [NSBundle.mainBundle URLForResource:@"dummyAudio" withExtension:@"aac"];
     TreeNode* rnd = [TreeNode nodeWithURL:remoteURL title:@"🕺 Random" subtitle:@"I'm feeling lucky… 💃 " xplicit:NO artwork:nil];
 
     _rootNode = [TreeNode nodeWithChildren:@[ hot, new, fav, rnd ] title:nil subtitle:nil xplicit:NO artwork:nil];
@@ -102,19 +102,21 @@
 #pragma mark -
 #pragma mark Target/Action for MPRemoteCommandCenter
 
--(void)onPlayCommand:(id)sender
+-(MPRemoteCommandHandlerStatus)onPlayCommand:(id)sender
 {
     [_player play];
+    return MPRemoteCommandHandlerStatusSuccess;
 }
 
--(void)onPauseCommand:(id)sender
+-(MPRemoteCommandHandlerStatus)onPauseCommand:(id)sender
 {
     [_player pause];
+    return MPRemoteCommandHandlerStatusSuccess;
 }
 
--(void)onTogglePlayPauseCommand:(id)sender
+-(MPRemoteCommandHandlerStatus)onTogglePlayPauseCommand:(id)sender
 {
-
+    return MPRemoteCommandHandlerStatusCommandFailed;
 }
 
 #pragma mark -
@@ -144,11 +146,11 @@
     NSLog( @"initiatePlaybackOfContentItemAtIndexPath: %@", indexPath );
 
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        TreeNode* node = [_rootNode treeNodeAtIndexPath:indexPath];
+        TreeNode* node = [self->_rootNode treeNodeAtIndexPath:indexPath];
         if ( node.url )
         {
-            _player = [AVPlayer playerWithURL:node.url];
-            [_player play];
+            self->_player = [AVPlayer playerWithURL:node.url];
+            [self->_player play];
 
             MPPlayableContentManager.sharedContentManager.nowPlayingIdentifiers = @[ node.contentItem.identifier ];
             MPNowPlayingInfoCenter.defaultCenter.nowPlayingInfo = node.nowPlayingInfo;
