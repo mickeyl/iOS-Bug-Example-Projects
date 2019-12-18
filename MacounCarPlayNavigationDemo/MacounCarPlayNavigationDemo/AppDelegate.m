@@ -62,6 +62,9 @@
 
     window.rootViewController = self.viewController;
 
+    UITapGestureRecognizer* tr = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onGestureRecognizer:)];
+    [window addGestureRecognizer:tr];
+
     _cpInterfaceController = interfaceController;
     _cpWindow = window;
 }
@@ -104,6 +107,11 @@
     [map setRegion:region];
 
     return vc;
+}
+
+-(void)onGestureRecognizer:(UITapGestureRecognizer*)gr
+{
+    NSLog( @"YAY!" );
 }
 
 #pragma mark -
